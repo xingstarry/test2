@@ -1,13 +1,18 @@
+html{
+
+}
 html,body {
     width: 100%;
     overflow: hidden;
-    overflow-y: scroll;
 }
 body {
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
     font-size: 16px;
     background-color: #f8f8f9;
-
-    -webkit-overflow-scrolling: touch;
+    /*-webkit-overflow-scrolling: touch;*/
 }
 .allBox {
     position: relative;

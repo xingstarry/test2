@@ -45,6 +45,10 @@ $(function() {
         $('html').css('position','relative');
         return false;
     })
+
+    $(window).on('touchmove',function (e) {
+
+    })
 });
 
 /**********获取数据*********/

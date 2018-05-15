@@ -149,51 +149,53 @@
 
     <div class="waitmore">Niffler 持续寻找中，敬请期待…</div>
 
-<!-- 底部菜单栏 -->
-    <footer>
-        <div class="wallet">
-            <span class="icon_wallet"></span>
-        </div>
-        <div class="gexian"></div>
-        <div class="money">
-            <span class="icon_money"></span>
-        </div>
-    </footer>
 
-      <div class="attention" style="display: none;">
-        <div class="public_num">
-          <h3>
-            <p>关注公众号</p>
-            <p>领养Niffler</p>
-          </h3>
-          <div class="qr_code">
-            <img src="./img/QR@2x.png" alt="">
-          </div>
-
-          <div class="changan">
-            <div>
-              <p class="num1">
-                长按识别二维码
-              </p>
-              <p class="num2">
-                关注公众号不走丢，每天有惊喜
-              </p>
-            </div>
-            <div class="bgt"></div>
-          </div>
-        </div>
-        <!-- 遮罩层 -->
-        <div class="maskLayer"></div>
-      </div>
 
     </div>
   </div>
+  <!-- 底部菜单栏 -->
+  <footer>
+    <div class="wallet">
+      <span class="icon_wallet"></span>
+    </div>
+    <div class="gexian"></div>
+    <div class="money">
+      <span class="icon_money"></span>
+    </div>
+  </footer>
 
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./js/index.js"></script>
+  <div class="attention" style="display: none;">
+    <div class="public_num">
+      <h3>
+        <p>关注公众号</p>
+        <p>领养Niffler</p>
+      </h3>
+      <div class="qr_code">
+        <img src="./img/QR@2x.png" alt="">
+      </div>
+
+      <div class="changan">
+        <div>
+          <p class="num1">
+            长按识别二维码
+          </p>
+          <p class="num2">
+            关注公众号不走丢，每天有惊喜
+          </p>
+        </div>
+        <div class="bgt"></div>
+      </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="maskLayer"></div>
+  </div>
+
+</body>
+
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/index.js"></script>
 <script src="./js/jweixin-1.3.2.js"></script>
 <script>
-
+    $('body').height($(window).height());
 </script>
-</body>
 </html>
