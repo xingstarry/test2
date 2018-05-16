@@ -1,7 +1,21 @@
 html{
-
+    /*overflow-x: hidden;*/
 }
 html,body {
+    width: 100%;
+
+}
+body {
+    /*-webkit-overflow-scrolling: auto;*/
+    /*overflow-y: scroll;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    font-size: 16px;
+    background-color: #f8f8f9;
+}
+/*1*/
+/*html,body {
     width: 100%;
     overflow: hidden;
 }
@@ -13,10 +27,10 @@ body {
     left: 0;
     font-size: 16px;
     background-color: #f8f8f9;
-    /*-webkit-overflow-scrolling: touch;*/
-}
+    !*-webkit-overflow-scrolling: touch;*!
+}*/
 .allBox {
-    position: relative;
+    /*position: relative;*/
     padding-bottom: 4.5rem;
 }
 
