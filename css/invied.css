@@ -1,0 +1,76 @@
+
+.invite{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tanchuan {
+    background-color: rgba(255,255,255,0.89);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -15rem;
+    margin-left: -10rem;
+    width: 20rem;
+    height: 28.125rem;
+    border-radius: 0.5rem;
+    padding-top: 1.875rem;
+}
+.tanchuan h1 {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #212c68;
+    padding: 0;
+    margin: 0 0 0.9rem 0;
+}
+.tanchuan p {
+    text-align: center;
+    color: #212c68;
+    font-size: 0.8125rem;
+    position: relative;
+}
+.tanchuan .lianjie {
+    word-break: break-all;
+    width: 15.6875rem;
+    height: 10.1875rem;
+    margin: 2.406rem auto 0 auto;
+    border: 2px solid rgba(251,100,33,0.6);
+    border-radius: 0.5rem;
+    padding: 1.219rem 0.75rem 0 0.75rem;
+    color: #212c68;
+}
+.copys {
+    width: 9.5rem;
+    height: 2.5625rem;
+    background-color: #ff9e00;
+    color: #fff;
+    border-radius: 2rem;
+    line-height: 2.5625rem;
+    text-align: center;
+    margin: 2.5rem auto 0 auto;
+    position: relative;
+    z-index: 10;
+}
+.copy_pic {
+    width: 8rem;
+    height: 8.156rem;
+    background-image: url('../img/logo@2x.png');
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 1.4rem;
+    z-index: 0;
+}
+.maskLayer{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}

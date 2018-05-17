@@ -5,198 +5,133 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="css/qrCode.css">
+    <link rel="stylesheet" href="./css/lookfor.css">
+    <link rel="stylesheet" href="./css/invied.css">
     <title>首页</title>
 </head>
 <body>
-  <div class="allBox">
-    <div class="inner">
-<!-- 头部交易记录 -->
-    <header>
-        <h1>
-          <em>钱包总资产</em>
-          <i class="codeBtn"><a href="javascript:;"></a></i>
-        </h1>
-        <div class="trans_record">
-            <span class="equal_to">≈</span>
-            <span id="allCoinAsset" class="amount_one">0.0000</span>
-            <span class="cny">CNY</span>
 
-            <div class="record_btn">资产明细</div>
-        </div>
-    </header>
-
-
-<!-- 大卡展示 -->
-    <!--<div id="bigCard" class="quote_price">
-        &lt;!&ndash;<div class="quote_record">
-            <div class="shang">
-                <span class="left_lable"></span>
-                <span class="lable_name">BTC</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-              <span class="chs_price">行情价:</span>
-              <span> 60549.57</span>
-              <span class="units">&nbsp;CNY</span>
-            </p>
-
-            <p class="quote_num">
-              <span class="chs_num">个&#x3000;数:</span>
-              <span class="now_num"> 0</span>
-            </p>
-        </div>&ndash;&gt;
-    </div>-->
-
-    <div class="loadData">数据加载中...</div>
-
-<!-- 卡包列表，两张卡一组 -->
-    <div id="listCard" class="list_card">
-        <!--<div class="eth">
-            <div class="shang">
-                <span class="eth_lable eths"></span>
-                <span class="lable_name">ETH</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable"></span>
-                <span class="lable_name">XRP</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
+  <!-- invide -->
+    <div class="invite" style="display: none">
+      <div class="tanchuan">
+        <h1>已邀请 0 人</h1>
+        <p>快去分享到群聊和朋友圈吧~</p>
+        <p>每邀请一个好友最高可获得1BTC奖励</p>
+        <div class="lianjie">
+          &#x3000;&#x3000;在区块链的世界里,有一只挖币的神兽Niffer，它挖到了一些极具潜力的数字货币准备送给您，快点击领取吧：
+          http://easylink.bayss.cn/niffler/
+          ite.htmls?code=wt4RMV
         </div>
 
-        &lt;!&ndash; 分割线 &ndash;&gt;
-        &lt;!&ndash;<div class="fengexian"></div>&ndash;&gt;
-
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable swetc"></span>
-                <span class="lable_name">SWETC</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
+        <div class="copys">
+          复制链接
         </div>
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable doge"></span>
-                <span class="lable_name">DOGE</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>-->
+
+        <div class="copy_pic"></div>
+      </div>
+      <div class="maskLayer"></div>
     </div>
 
-    <div class="waitmore">Niffler 持续寻找中，敬请期待…</div>
+  <!-- qr code -->
+    <div class="attention" style="display: none;">
+        <div class="public_num">
+            <h3>关注公众号</h3>
+            <div class="qr_code">
+                <img src="./img/QR@2x.png" alt="">
+            </div>
 
+            <div class="changan">
+                <div>
+                    <p class="num1">
+                        长按识别二维码
+                    </p>
+                    <p class="num2">
+                        关注公众号不走丢，每天有惊喜
+                    </p>
+                </div>
+                <div class="bgt"></div>
+            </div>
+        </div>
+        <!-- 遮罩层 -->
+        <div class="maskLayer"></div>
+    </div>
 
-    </div><!--inner-->
+  <!-- content -->
+    <div class="content">
+      <!-- 头部交易记录 -->
+      <header>
+        <div class="trans_record">
+          <h1>找币任务</h1>
 
-    <!-- 底部菜单栏 -->
+          <div class="infor">
+            最高找到1BTC的奖励
+          </div>
+
+          <div class="activity">
+            <div class="acti_pro">
+              <div class="acti_name">
+                <span class="acti_icon every"></span>
+                <div class="acti">
+                  <span class="names">每日奖励</span>
+                  <span class="sma_info">小积累，大财富</span>
+                </div>
+              </div>
+              <div class="acti_btn draw">
+                领取
+              </div>
+            </div>
+
+            <!-- 分割 -->
+            <div class="fg line"></div>
+
+            <div class="acti_pro">
+              <div class="acti_name">
+                <span class="acti_icon attend"></span>
+                <div class="acti">
+                  <span class="names">邀请有礼</span>
+                  <span class="sma_info">已邀请0人</span>
+                </div>
+              </div>
+              <div class="acti_btn">
+                邀请
+              </div>
+            </div>
+
+            <!-- 分割 -->
+            <div class="fg line"></div>
+
+            <div class="acti_pro">
+              <div class="acti_name">
+                <span class="acti_icon phone"></span>
+                <div class="acti">
+                  <span class="names">绑定手机号</span>
+                </div>
+              </div>
+              <div class="acti_btn bindPhone">
+                绑定
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="surpri">
+
+      </div>
+    </div>
+
+<!-- 底部菜单栏 -->
     <footer>
-      <div class="wallet">
-        <span class="icon_wallet"></span>
-      </div>
-      <div class="gexian"></div>
-      <div class="money">
-        <span class="icon_money"></span>
-      </div>
+        <div class="wallet">
+            <span class="icon_wallet"></span>
+        </div>
+        <div class="gexian"></div>
+        <div class="money">
+            <span class="icon_money"></span>
+        </div>
     </footer>
 
-    <div class="attention" style="display: none;">
-    <div class="public_num">
-      <h3>
-        <p>关注公众号</p>
-        <p>领养Niffler</p>
-      </h3>
-      <div class="qr_code">
-        <img src="./img/QR@2x.png" alt="">
-      </div>
-
-      <div class="changan">
-        <div>
-          <p class="num1">
-            长按识别二维码
-          </p>
-          <p class="num2">
-            关注公众号不走丢，每天有惊喜
-          </p>
-        </div>
-        <div class="bgt"></div>
-      </div>
-    </div>
-    <!-- 遮罩层 -->
-    <div class="maskLayer"></div>
-  </div>
-
-  </div><!--allBox-->
-
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/lookfor.js"></script>
 </body>
-
-<script src="./js/jquery-3.2.1.min.js"></script>
-<script src="./js/index.js"></script>
-<script src="./js/jweixin-1.3.2.js"></script>
-<script>
-    $('body').height($(window).height());
-</script>
 </html>
