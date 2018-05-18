@@ -17,6 +17,7 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 h1,h2,h3,h4,h5,h6,em,i {
     font-weight: 100;
@@ -28,8 +29,13 @@ ul,ol,li {
 a {
     color: #666;
     text-decoration: none;
-    outline: 0
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 a:hover {
     text-decoration: none
+}
+
+body{
+    font-family: 'PingFangSC','Helvetica Neue',Helvetica,sans-serif;
 }
