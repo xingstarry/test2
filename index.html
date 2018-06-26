@@ -19,18 +19,18 @@
         </p>
       </div>
       <div class="con">
-        <label for="drawUrl">提取地址</label>
+        <label for="drawUrl">提取地址<em class="errorText"></em></label>
         <p class="drawInput">
-          <input name="obtain_address" type="tel" id="drawUrl" class="inputItem" placeholder="输入或长按粘贴地址">
+          <input name="obtain_address" type="text" id="drawUrl" class="inputItem" placeholder="输入或长按粘贴地址">
           <span class="arrow">
             <img src="img/draw_icon_arrow.png" alt="" class="moreUrl">
           </span>
         </p>
       </div>
       <div class="con">
-        <label for="drawNum">提取数量</label>
+        <label for="drawNum">提取数量<em class="errorText"></em></label>
         <p class="drawInput">
-          <input name="obtain_num" type="text" id="drawNum" class="inputItem minInput" placeholder="最小提币数量  20">
+          <input name="obtain_num" type="number" min="20" id="drawNum" class="inputItem minInput" placeholder="最小提币数量  20">
           <span class="coinName">ATA</span>
           <button class="totality">全部</button>
         </p>
@@ -81,9 +81,13 @@
   // 获取提取值计算到账值
   $('#drawNum').on('touchstart',function () {
     $(this).on('blur',function () {
-        if($(this).val()){
+        if($(this).val()>=20){
+            $(this).parents('.con').find('.errorText').html('');
             var num = $(this).val()-$('#fee').html();
             $('#finalNum').html(num.toFixed(4));
+        }else{
+            $(this).parents('.con').find('.errorText').html('最小提取20');
+            $(this).val('');
         }
     })
   });
