@@ -20,7 +20,7 @@ time, mark, audio, video {
     -webkit-tap-highlight-color: transparent;
 }
 h1,h2,h3,h4,h5,h6,em,i {
-    font-weight: 100;
+    font-weight: normal;
     font-style: normal
 }
 ul,ol,li {

@@ -1,177 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="css/qrCode.css">
-    <title>首页</title>
+  <meta charset="UTF-8">
+  <title>提取</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/btc_draw.css">
 </head>
 <body>
-  <div class="allBox">
-    <div class="inner">
-<!-- 头部交易记录 -->
-    <header>
-        <h1>
-          <em>钱包总资产</em>
-          <i class="codeBtn"><a href="javascript:;"></a></i>
-        </h1>
-        <div class="trans_record">
-            <span class="equal_to">≈</span>
-            <span id="allCoinAsset" class="amount_one">0.0000</span>
-            <span class="cny">CNY</span>
-
-            <div class="record_btn">资产明细</div>
-        </div>
-    </header>
-
-
-    <div class="loadData">数据加载中...</div>
-
-<!-- 卡包列表，两张卡一组 -->
-    <div id="listCard" class="list_card">
-        <!--<div class="eth">
-            <div class="shang">
-                <span class="eth_lable eths"></span>
-                <span class="lable_name">ETH</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable"></span>
-                <span class="lable_name">XRP</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>
-
-        &lt;!&ndash; 分割线 &ndash;&gt;
-        &lt;!&ndash;<div class="fengexian"></div>&ndash;&gt;
-
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable swetc"></span>
-                <span class="lable_name">SWETC</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>
-        <div class="eth">
-            <div class="shang">
-                <span class="eth_lable doge"></span>
-                <span class="lable_name">DOGE</span>
-            </div>
-            <div class="xiang">
-                <span class="equal_to">≈</span>
-                <span class="amount_one">0.0000</span>
-                <span class="cny">CNY</span>
-            </div>
-            <p class="price_info">
-                <span class="chs_price">行情价:</span>
-                <span> 60549.57</span>
-                <span class="units">&nbsp;CNY</span>
-            </p>
-    
-            <p class="quote_num">
-                <span class="chs_num">个&#x3000;数:</span>
-                <span class="now_num"> 0</span>
-            </p>
-        </div>-->
-    </div>
-
-    <div class="waitmore">Niffler 持续寻找中，敬请期待…</div>
-
-
-    </div><!--inner-->
-
-    <!-- 底部菜单栏 -->
-    <footer>
-      <div class="wallet">
-        <span class="icon_wallet"></span>
+  <div id="drawCoins">
+    <form action="" class="drawForm" name="drawForm" method="post">
+      <div class="con">
+        <label>可用</label>
+        <p class="drawInput">
+          <em class="num">123.3456</em>
+          <span class="coinName">ATA</span>
+        </p>
       </div>
-      <div class="gexian"></div>
-      <div class="money">
-        <span class="icon_money"></span>
+      <div class="con">
+        <label for="drawUrl">提取地址</label>
+        <p class="drawInput">
+          <input name="obtain_address" type="tel" id="drawUrl" class="inputItem" placeholder="输入或长按粘贴地址">
+          <span class="arrow">
+            <img src="img/draw_icon_arrow.png" alt="" class="moreUrl">
+          </span>
+        </p>
       </div>
-    </footer>
-
-    <div class="attention" style="display: none;">
-    <div class="public_num">
-      <h3>
-        <p>关注公众号</p>
-        <p>领养Niffler</p>
-      </h3>
-      <div class="qr_code">
-        <img src="./img/QR@2x.png" alt="">
+      <div class="con">
+        <label for="drawNum">提取数量</label>
+        <p class="drawInput">
+          <input name="obtain_num" type="text" id="drawNum" class="inputItem minInput" placeholder="最小提币数量  20">
+          <span class="coinName">ATA</span>
+          <button class="totality">全部</button>
+        </p>
+      </div>
+      <div class="con">
+        <label>手续费</label>
+        <p class="drawInput">
+          <em class="num" id="fee">1.0000</em>
+          <span class="coinName">ATA</span>
+        </p>
+      </div>
+      <div class="con">
+        <label>到账数量</label>
+        <p class="drawInput">
+          <em class="num" id="finalNum">0</em>
+          <span class="coinName">ATA</span>
+        </p>
       </div>
 
-      <div class="changan">
-        <div>
-          <p class="num1">
-            长按识别二维码
-          </p>
-          <p class="num2">
-            关注公众号不走丢，每天有惊喜
-          </p>
-        </div>
-        <div class="bgt"></div>
+      <p class="tips">确定我们会对提币进行人工审核，预计到账时间为3个工作日，请耐心等待。</p>
+      <p class="block"></p>
+      <div class="drawBtn">
+        <button type="submit">确定</button>
       </div>
-    </div>
-    <!-- 遮罩层 -->
-    <div class="maskLayer"></div>
+    </form>
   </div>
 
-  </div><!--allBox-->
+  <!-- 更多地址 -->
+  <div class="urlBox">
+    <div class="mask"></div>
+    <div class="urlList">
+      <ul>
+        <li><p>0x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977</p></li>
+        <li><p>0x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977</p></li>
+        <li><p>0x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977</p></li>
+      </ul>
+      <p class="cancel" id="closeUrl">取消</p>
+    </div>
+  </div>
 
 </body>
 
-<script src="./js/jquery-3.2.1.min.js"></script>
-<script src="./js/index.js"></script>
-<script src="./js/jweixin-1.3.2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script>
-    $('body').height($(window).height());
+  // coin名称
+  $('.coinName').html('ATA');
+
+  // 获取提取值计算到账值
+  $('#drawNum').on('touchstart',function () {
+    $(this).on('blur',function () {
+        if($(this).val()){
+            var num = $(this).val()-$('#fee').html();
+            $('#finalNum').html(num.toFixed(4));
+        }
+    })
+  });
+
+  // 更多地址
+  $('.moreUrl').on('click',function () {
+    $('.urlBox').show();
+    $('.urlBox').find('.mask').fadeIn();
+    $('.urlBox').find('.urlList').stop().animate({bottom:0});
+  });
+
+  // close弹窗
+  $('.mask').on('click',function () {
+    $('.urlBox').find('.mask').fadeOut();
+    $('.urlBox').find('.urlList').stop().css({bottom:'-12.375rem'});
+    $(this).parents('.urlBox').hide();
+  }).on('touchmove',function (e) {
+      e.preventDefault();
+  });
+  $('.urlBox').on('touchmove',function (e) {
+      e.preventDefault();
+  });
+  // 取消
+  $('#closeUrl').on('click',function () {
+    $('.urlBox').find('.mask').fadeOut();
+    $('.urlBox').find('.urlList').stop().css({bottom:'-12.375rem'});
+    $(this).parents('.urlBox').hide();
+  });
 </script>
 </html>
