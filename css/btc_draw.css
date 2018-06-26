@@ -11,8 +11,16 @@ html, body {
   padding: 1.1875rem 1rem 0 0;
   border-bottom: 1px solid #e4e4e4; }
 .drawForm label {
+  display: block;
   font-size: 0.875rem;
-  font-weight: 700; }
+  font-weight: 700;
+  position: relative; }
+.drawForm .errorText {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #ff4e37;
+  font-size: 0.875rem; }
 .drawForm .drawInput {
   display: flex;
   flex-direction: row; }
