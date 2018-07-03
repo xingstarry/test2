@@ -1,11 +1,16 @@
 @charset "UTF-8";
+input[required]:invalid, input:focus:invalid, input:visited:invalid, textarea[required]:invalid, textarea:focus:invalid {
+  box-shadow: none; }
+
 html, body {
   width: 100%;
   overflow-x: hidden;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #fff; }
 
 #drawCoins {
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  background-color: #fff; }
 
 .drawForm .con {
   padding: 1.1875rem 1rem 0 0;
@@ -40,6 +45,7 @@ html, body {
     color: #91a3b9;
     padding-left: 0.375rem; }
   .drawForm .drawInput .inputItem {
+    -webkit-appearance: none;
     flex: 1;
     display: inline-block;
     height: 2.625rem;
@@ -47,13 +53,22 @@ html, body {
     font-size: 1rem;
     color: #000;
     border: none;
-    outline: none; }
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    text-align: left;
+    padding-left: 0; }
   .drawForm .drawInput .minInput {
     min-width: 64%; }
-  .drawForm .drawInput .arrow img {
-    width: 1.1875rem;
-    height: 1.1875rem;
-    vertical-align: middle; }
+  .drawForm .drawInput .arrow {
+    width: 2.25rem;
+    text-align: right;
+    padding-left: 0; }
+    .drawForm .drawInput .arrow img {
+      display: none;
+      width: 1.1875rem;
+      height: 1.1875rem;
+      vertical-align: middle; }
   .drawForm .drawInput .totality {
     display: inline-block;
     font-size: 1rem;
@@ -64,8 +79,11 @@ html, body {
     border: none;
     background-color: transparent;
     padding: 0;
-    outline: none;
-    padding-left: 0.5rem; }
+    outline: none; }
+  .drawForm .drawInput .marginTop {
+    width: 2.25rem;
+    margin-top: 0.0625rem;
+    font-size: 0.875rem; }
 .drawForm .tips {
   padding: 0.6875rem 1rem;
   margin-top: 0.6875rem;
