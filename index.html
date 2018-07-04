@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>提取</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/btc_draw.css">
+</head>
+<body>
+  <div id="drawCoins">
+    <form action="" class="drawForm" name="drawForm" method="post">
+      <div class="con">
+        <label>可用</label>
+        <p class="drawInput">
+          <em class="num" id="allCoins"></em>
+          <span class="coinName"></span>
+        </p>
+      </div>
+      <div class="con">
+        <label for="drawUrl">提取地址</label>
+        <p class="drawInput">
+          <input name="obtain_address" type="text" id="drawUrl" class="inputItem" placeholder="输入或长按粘贴地址">
+          <span class="arrow">
+            <img src="img/draw_icon_arrow.png" alt="" id="moreUrl">
+          </span>
+        </p>
+      </div>
+      <div class="con">
+        <label for="drawNum">提取数量<em class="errorText"></em></label>
+        <p class="drawInput">
+          <input name="obtain_num" type="number" step="0.0001" min="20.000" id="drawNum" class="inputItem minInput" placeholder="最小提币数量 20" maxlength="7">
+          <span class="coinName marginTop"></span>
+          <span class="totality marginTop" id="totality">全部</span>
+        </p>
+      </div>
+      <div class="con">
+        <label>手续费</label>
+        <p class="drawInput">
+          <em class="num" id="fee"></em>
+          <span class="coinName"></span>
+        </p>
+      </div>
+      <div class="con">
+        <label>到账数量</label>
+        <p class="drawInput">
+          <em class="num" id="finalNum">0</em>
+          <span class="coinName"></span>
+        </p>
+      </div>
+
+      <p class="tips">确定我们会对提币进行人工审核，预计到账时间为3个工作日，请耐心等待。</p>
+      <p class="block"></p>
+      <div class="drawBtn">
+        <button type="submit" id="subBtn">确定</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- 更多地址 -->
+  <div class="urlBox">
+    <div class="mask"></div>
+    <div class="urlList">
+      <ul id="urlUl">
+      </ul>
+      <p class="cancel" id="closeUrl">取消</p>
+    </div>
+  </div>
+
+</body>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+  $('#allCoins').html('123.3456'); // 总币值
+  $('.coinName').html('ATA'); // coin名称
+  $('#fee').html('1.0000'); // 手续费值
+  var urlList = ['0x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977','1x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977','2x86ae5c1ca38fd88fe20bf38d9a7e36c70cd2f977']; // 更多地址记录
+
+  // 渲染地址列表
+  if(urlList.length != 0){
+      $('#moreUrl').show();
+      for(var i=0;i<urlList.length;i++){
+          $('#urlUl').append('<li><p>'+urlList[i]+'</p></li>');
+      }
+      /*$.each('urlList',function (index,item) {
+          $('#urlUl').append('<li><p>'+item+'</p></li>');
+      })*/
+  }
+
+  // 点击提交
+  $('#subBtn').on('click',function () {
+
+  });
+
+  // 点击全部
+  $('#totality').on('click',function () {
+      $('#drawNum').val($('#allCoins').html());
+      var num = $('#allCoins').html()-$('#fee').html();
+      $('#finalNum').html(num.toFixed(4));
+  });
+
+  // 点击选择地址
+  $('#urlUl').on('click','li',function () {
+      $('#drawUrl').val($(this).find('p').html());
+      closeUrl($(this));
+  });
+
+  // 弹出更多地址
+  $('#moreUrl').on('click',function () {
+    $('.urlBox').show();
+    $('.urlBox').find('.mask').fadeIn();
+    $('.urlBox').find('.urlList').stop().animate({bottom:0});
+  });
+
+  // close弹窗
+  $('.mask').on('click',function () {
+      closeUrl($(this));
+  }).on('touchmove',function (e) {
+      e.preventDefault();
+  });
+  $('.urlBox').on('touchmove',function (e) {
+      e.preventDefault();
+  });
+  // 取消
+  $('#closeUrl').on('click',function () {
+      closeUrl($(this));
+  });
+  function closeUrl(obj) {
+      $('.urlBox').find('.mask').fadeOut();
+      $('.urlBox').find('.urlList').stop().css({bottom:'-12.375rem'});
+      obj.parents('.urlBox').hide();
+  }
+
+
+
+
+
+  // 获取提取值计算到账值
+  $('#drawNum').on('touchstart',function () {
+      $(this).on('input propertychange',function () {
+          var x = $(this).val();//测试的数字
+          var y = String(x).indexOf(".") + 1;//获取小数点的位置
+          var count = String(x).length - y;//获取小数点后的个数
+          if(count >4) {
+              var num2=(x-0).toFixed(4+1);
+              $(this).val(num2.substring(0,num2.lastIndexOf('.')+(4+1)));
+          }
+
+          if(($(this).val()-0)>=$(this).attr('min') && ($(this).val()-0)<=$('#allCoins').html()){
+              $(this).parents('.con').find('.errorText').html('');
+
+          }else if(($(this).val()-0)<$(this).attr('min')){
+
+              $(this).parents('.con').find('.errorText').html('最小提取'+parseFloat($(this).attr('min'))+'');
+          }else{
+              $(this).parents('.con').find('.errorText').html('已超出可用值');
+          }
+          var num = $(this).val()-$('#fee').html();
+          if($(this).val() =='' || $(this).val()-0<=$('#fee').html()-0){ // 提取数量为空时
+              $('#finalNum').html(0);
+          }else{
+              $('#finalNum').html(num.toFixed(4));
+          }
+      })
+  });
+
+
+</script>
+</html>

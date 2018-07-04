@@ -61,6 +61,13 @@ html, body {
     background-color: transparent;
     text-align: left;
     padding: 0; }
+  .drawForm .drawInput #drawUrl, .drawForm .drawInput #drawNum {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; }
   .drawForm .drawInput .minInput {
     min-width: 64%; }
   .drawForm .drawInput .arrow {
@@ -138,16 +145,23 @@ html, body {
     width: 100%;
     background-color: #fff; }
     .urlBox .urlList ul {
-      max-height: 9.1875rem;
+      max-height: 12.5rem;
       overflow-y: scroll; }
       .urlBox .urlList ul li {
         border-bottom: 1px solid #d7d7d7; }
         .urlBox .urlList ul li p {
           width: 92%;
+          height: 2.875rem;
+          line-height: 1.4375rem;
+          display: flex;
+          align-items: left;
+          justify-content: space-around;
+          flex-direction: column;
           padding: 0.625rem 0;
-          font-size: 1.125rem;
+          font-size: 1rem;
           margin: 0 auto;
-          overflow-x: hidden; }
+          overflow-x: hidden;
+          word-break: break-all; }
     .urlBox .urlList .cancel {
       padding: 0.625rem 0;
       text-align: center;
