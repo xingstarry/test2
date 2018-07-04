@@ -66,8 +66,7 @@ html, body {
     white-space: nowrap;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: inline-axis; }
+    -webkit-line-clamp: 1; }
   .drawForm .drawInput .minInput {
     min-width: 64%; }
   .drawForm .drawInput .arrow {
