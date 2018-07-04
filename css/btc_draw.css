@@ -65,7 +65,7 @@ html, body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    display: -webkit-box; }
+    -webkit-text-overflow: ellipsis; }
   .drawForm .drawInput .minInput {
     min-width: 64%; }
   .drawForm .drawInput .arrow {
